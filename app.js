@@ -1,4 +1,12 @@
-var uiController = (function() {})();
+var uiController = (function() {
+  return {
+    getInput: function() {
+      return {
+        type: document.querySelector(".add__type").value
+      };
+    }
+  };
+})();
 
 var financeController = (function() {})();
 
@@ -8,10 +16,10 @@ var appController = (function(uiController, financeController) {
     // авсан өгөгдлүүдээ санхүүгийн контроллерт дамжуулж хадгална
     // авсан өгөгдлүүдийг веб дээрээ тохирох хэсэгт нь гаргана
     //төсвийг тооцоолно
-    alert("beep");
   };
 
   document.querySelector(".add__btn").addEventListener("click", function() {
+    console.log(uiController.getInput());
     addItem();
   });
 
